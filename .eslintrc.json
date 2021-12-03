@@ -41,6 +41,7 @@
         "react-hooks"
     ],
     "rules": {
+        "import/prefer-default-export": "off",
         "react/no-unstable-nested-components": "off",
         "react/no-namespace": "off",
         "react/prefer-exact-props": "off",
