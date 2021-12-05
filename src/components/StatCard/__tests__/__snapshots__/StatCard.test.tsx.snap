@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`could accept none react element icon 1`] = `
+.c0 {
+  background-color: red;
+}
+
+<div
+  className="ant-card ant-card-bordered c0 mt-5"
+>
+  <div
+    className="ant-card-body"
+    style={Object {}}
+  >
+    1
+  </div>
+</div>
+`;

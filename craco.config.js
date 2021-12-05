@@ -6,6 +6,18 @@ module.exports = {
             plugins: [require('tailwindcss'), require('autoprefixer')],
         },
     },
+    babel: {
+        plugins: [
+            [
+                'babel-plugin-styled-components',
+                {
+                    pure: true,
+                    fileName: true,
+                    displayName: true,
+                },
+            ],
+        ],
+    },
     plugins: [
         {
             plugin: CracoLessPlugin,

@@ -41,6 +41,8 @@
         "react-hooks"
     ],
     "rules": {
+        "react/require-default-props": "off",
+        "react/jsx-props-no-spreading": "off",
         "react/jsx-uses-react": "off",
         "react/react-in-jsx-scope": "off",
         "import/prefer-default-export": "off",
@@ -59,7 +61,8 @@
         "react/function-component-definition": [
             2,
             {
-                "namedComponents": "function-declaration"
+                "namedComponents": "function-declaration",
+                "unnamedComponents": "arrow-function"
             }
         ],
         "react/jsx-filename-extension": [
