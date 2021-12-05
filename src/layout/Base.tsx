@@ -41,8 +41,8 @@ function Base({ children }: Props) {
                 </Menu>
             </Sider>
             <Layout className="site-layout">
-                <Content style={{ margin: '0 16px' }}>{children}</Content>
-                <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+                <Content className="mx-4">{children}</Content>
+                <Footer className="text-center">Ant Design ©2018 Created by Ant UED</Footer>
             </Layout>
         </Layout>
     );
