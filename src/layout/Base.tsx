@@ -7,6 +7,7 @@ import {
     UserOutlined,
 } from '@ant-design/icons';
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const { Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -16,15 +17,17 @@ type Props = {
 };
 
 function Base({ children }: Props) {
+    const location = useLocation();
+
     return (
         <Layout className="h-screen">
             <Sider collapsible>
-                <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-                    <Menu.Item key="1" icon={<PieChartOutlined />}>
-                        Option 1
+                <Menu theme="dark" selectedKeys={[location.pathname]} mode="inline">
+                    <Menu.Item key="/" icon={<PieChartOutlined />}>
+                        <Link to="/">home</Link>
                     </Menu.Item>
-                    <Menu.Item key="2" icon={<DesktopOutlined />}>
-                        Option 2
+                    <Menu.Item key="/teams" icon={<DesktopOutlined />}>
+                        <Link to="/teams">Tems</Link>
                     </Menu.Item>
                     <SubMenu key="sub1" icon={<UserOutlined />} title="User">
                         <Menu.Item key="3">Tom</Menu.Item>
