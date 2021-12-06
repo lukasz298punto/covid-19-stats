@@ -7,7 +7,7 @@ const prefix = '/covid-19-stats';
 
 export const routes = {
     WORLD: {
-        path: `${prefix}`,
+        path: `${prefix}/`,
         component: <World />,
         settings: {
             icon: <PieChartOutlined />,
