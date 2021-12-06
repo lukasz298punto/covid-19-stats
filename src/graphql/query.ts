@@ -1,10 +1,10 @@
 import { gql } from '@apollo/client';
 
 gql`
-    query getOffChan {
+    query GetFacts($from: ISO8601DateTime, $till: ISO8601DateTime) {
         offchain {
             covid {
-                facts {
+                facts(date: { since: $from, till: $till }) {
                     confirmed
                     recovered
                     deaths

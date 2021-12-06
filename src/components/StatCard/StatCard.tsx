@@ -1,9 +1,10 @@
-import { Card, CardProps, Typography } from 'antd';
+import { Card, CardProps, Spin, Typography } from 'antd';
+import { isUndefined } from 'lodash';
 import styled from 'styled-components';
 
 export type Props = {
     kind?: 'success' | 'warning' | 'error';
-    value: number;
+    value?: number;
 } & CardProps;
 
 const getColor = (kind: Props['kind']) => {
@@ -16,11 +17,19 @@ const getColor = (kind: Props['kind']) => {
     return color;
 };
 
-function StatCard({ value = 0, className, ...props }: Props) {
+function StatCard({ value, className, loading, children, ...props }: Props) {
     return (
-        <Card type="inner" {...props} className={className}>
-            <Typography.Text className="block text-center text-6xl p-4">{value}</Typography.Text>
-        </Card>
+        <Spin spinning={!!loading} size="large">
+            <Card type="inner" {...props} className={className}>
+                {isUndefined(value) ? (
+                    children
+                ) : (
+                    <Typography.Text className="block text-center text-6xl p-4">
+                        {value}
+                    </Typography.Text>
+                )}
+            </Card>
+        </Spin>
     );
 }
 

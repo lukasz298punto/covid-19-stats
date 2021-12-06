@@ -30,10 +30,10 @@ function Base({ children }: Props) {
                 </Menu>
             </Sider>
             <Layout>
-                <Header className="site-layout-background">
+                <Header className="site-layout-background px-4">
                     <Row justify="space-between" className="items-center">
-                        <Title level={3} className="text-white m-0">
-                            {t(' COVID-2019 Statistics')}
+                        <Title level={3} className="text-white m-0 lg:block md:block hidden">
+                            {t('COVID-2019 Statistics')}
                         </Title>
                         <div>
                             <Text className="text-white mr-2">{t('Date range')}</Text>
@@ -53,7 +53,9 @@ function Base({ children }: Props) {
                         </div>
                     </Row>
                 </Header>
-                <Content className="p-4">{children}</Content>
+                <Content className="p-4" style={{ overflowY: 'auto' }}>
+                    {children}
+                </Content>
             </Layout>
         </Layout>
     );

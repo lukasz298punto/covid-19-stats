@@ -77,6 +77,7 @@
             }
         ]
     },
+    "proxy": "https://graphql.bitquery.io",
     "resolutions": {
         "babel-loader": "8.1.0",
         "webpack": "4.44.2"
