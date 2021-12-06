@@ -3,16 +3,12 @@ import { createApolloClient } from 'utils/api';
 import './style/root.less';
 import Base from 'layout/Base';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import NoMatch from 'pages/NoMatch';
+import 'locales/config/i18n';
+import { map } from 'lodash';
+import { routes } from 'constants/routes';
 
 const client = createApolloClient(process.env.REACT_APP_API_KEY as string);
-
-function One() {
-    return <>one</>;
-}
-
-function Two() {
-    return <> tw</>;
-}
 
 function App() {
     return (
@@ -20,8 +16,11 @@ function App() {
             <BrowserRouter>
                 <Base>
                     <Routes>
-                        <Route path="/" element={<One />} />
-                        <Route path="/teams" element={<Two />} />
+                        {map(routes, ({ path, component }) => (
+                            <Route key={path} path={path} element={component} />
+                        ))}
+
+                        <Route path="*" element={<NoMatch />} />
                     </Routes>
                 </Base>
             </BrowserRouter>

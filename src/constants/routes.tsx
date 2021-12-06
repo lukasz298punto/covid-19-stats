@@ -8,27 +8,26 @@ const prefix = '/covid-19-stats';
 export const routes = {
     WORLD: {
         path: `${prefix}`,
-        component: World,
+        component: <World />,
         settings: {
             icon: <PieChartOutlined />,
         },
-        name: 'world',
+        name: 'World',
     },
     COUNTRIES: {
         path: `${prefix}/countries`,
-        component: Countries,
-        isExact: false,
+        component: <Countries />,
         settings: {
             icon: <DesktopOutlined />,
         },
-        name: 'countries',
+        name: 'Countries',
     },
     CONTINENTS: {
         path: `${prefix}/continents`,
-        component: Continents,
+        component: <Continents />,
         settings: {
             icon: <UserOutlined />,
         },
-        name: 'continents',
+        name: 'Continents',
     },
 } as const;
