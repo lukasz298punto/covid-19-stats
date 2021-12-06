@@ -12,4 +12,19 @@ gql`
             }
         }
     }
+
+    query GetFactsPerDates($from: ISO8601DateTime, $till: ISO8601DateTime) {
+        offchain {
+            covid {
+                facts(date: { since: $from, till: $till }, options: { asc: "date.date" }) {
+                    date {
+                        date
+                    }
+                    confirmed
+                    recovered
+                    deaths
+                }
+            }
+        }
+    }
 `;

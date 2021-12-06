@@ -2,32 +2,37 @@ import { Row, Col } from 'antd';
 import { StatCard } from 'components/StatCard';
 import { useTranslation } from 'react-i18next';
 import { Line } from '@ant-design/charts';
-import { useEffect } from 'react';
-import { useGetFactsLazyQuery } from 'graphql/generated';
+import { useEffect, useMemo } from 'react';
+import { useGetFactsLazyQuery, useGetFactsPerDatesLazyQuery } from 'graphql/generated';
 import { useGlobalState } from 'constants/globalState';
+import { find, flatMap } from 'lodash';
+import { getRangeOptions, RangeOption } from 'utils/dates';
 
 function World() {
     const { t } = useTranslation();
     const [getFacts, { loading: factsLoading, data: factsData }] = useGetFactsLazyQuery();
-    const [range] = useGlobalState('dateRangeType');
+    const [getFactsPerDates, { loading: factsPerDatesLoading, data: factsPerDatesData }] =
+        useGetFactsPerDatesLazyQuery();
+    const [rangeType] = useGlobalState('dateRangeType');
 
-    const data = [
-        { year: '1991', value: 3 },
-        { year: '1992', value: 4 },
-        { year: '1993', value: 3.5 },
-        { year: '1994', value: 5 },
-        { year: '1995', value: 4.9 },
-        { year: '1996', value: 6 },
-        { year: '1997', value: 7 },
-        { year: '1998', value: 9 },
-        { year: '1999', value: 13 },
-    ];
+    const calculateChartData = useMemo(
+        () =>
+            flatMap(factsPerDatesData?.offchain?.covid?.facts, (fact) => [
+                { year: fact.date?.date, value: fact.confirmed, category: t('Confirmed') },
+                { year: fact.date?.date, value: fact.deaths, category: t('Deaths') },
+                { year: fact.date?.date, value: fact.recovered, category: t('Recovered') },
+            ]),
+        [factsPerDatesData]
+    );
 
     useEffect(() => {
-        getFacts({ variables: { from: '2021-11-30', till: '2021-12-06T23:59:59' } });
-    }, [range]);
+        const { range } = find(getRangeOptions(), { value: rangeType }) as RangeOption;
 
-    console.log(factsLoading, 'factsLoading');
+        if (range) {
+            getFacts({ variables: { from: range[0], till: range[1] } });
+            getFactsPerDates({ variables: { from: range[0], till: range[1] } });
+        }
+    }, [rangeType]);
 
     return (
         <Row gutter={[8, 8]}>
@@ -56,30 +61,17 @@ function World() {
                 />
             </Col>
             <Col xs={24} lg={24}>
-                <StatCard title={t('Count of new cases')}>
+                <StatCard title={t('Count of new cases')} loading={factsPerDatesLoading}>
                     <Line
-                        data={data}
+                        data={calculateChartData}
                         height={400}
                         xField="year"
                         yField="value"
-                        point={{
-                            size: 5,
-                            shape: 'diamond',
+                        seriesField="category"
+                        xAxis={{
+                            type: 'time',
                         }}
-                    />
-                </StatCard>
-            </Col>
-            <Col xs={24} lg={24}>
-                <StatCard title={t('Count of new cases')}>
-                    <Line
-                        data={data}
-                        height={400}
-                        xField="year"
-                        yField="value"
-                        point={{
-                            size: 5,
-                            shape: 'diamond',
-                        }}
+                        color={['#1979C9', '#D62A0D', '#FAA219']}
                     />
                 </StatCard>
             </Col>

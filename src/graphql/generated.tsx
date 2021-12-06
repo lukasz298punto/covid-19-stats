@@ -6707,7 +6707,6 @@ export type ConfluxargumentsArgs = {
   any?: InputMaybe<Array<EthereumArgumentFilter>>;
   argument?: InputMaybe<Array<ArgumentSelector>>;
   argumentType?: InputMaybe<Array<ArgumentTypeSelector>>;
-  callDepth?: InputMaybe<StringSelector>;
   caller?: InputMaybe<Array<EthereumAddressSelector>>;
   date?: InputMaybe<DateSelector>;
   external?: InputMaybe<Scalars['Boolean']>;
@@ -6763,7 +6762,6 @@ export type ConfluxcoinpathArgs = {
 export type ConfluxdexTradesArgs = {
   any?: InputMaybe<Array<EthereumDexTradeFilter>>;
   baseCurrency?: InputMaybe<Array<EthereumCurrencySelector>>;
-  blockHash?: InputMaybe<HashSelector>;
   buyAmount?: InputMaybe<Array<AmountSelector>>;
   buyCurrency?: InputMaybe<Array<EthereumCurrencySelector>>;
   date?: InputMaybe<DateSelector>;
@@ -6795,7 +6793,6 @@ export type ConfluxdexTradesArgs = {
 /** Conflux Chain */
 export type ConfluxsmartContractCallsArgs = {
   any?: InputMaybe<Array<EthereumSmartContractCallFilter>>;
-  callDepth?: InputMaybe<StringSelector>;
   caller?: InputMaybe<Array<EthereumAddressSelector>>;
   date?: InputMaybe<DateSelector>;
   external?: InputMaybe<Scalars['Boolean']>;
@@ -11989,7 +11986,6 @@ export type EthereumargumentsArgs = {
   any?: InputMaybe<Array<EthereumArgumentFilter>>;
   argument?: InputMaybe<Array<ArgumentSelector>>;
   argumentType?: InputMaybe<Array<ArgumentTypeSelector>>;
-  callDepth?: InputMaybe<StringSelector>;
   caller?: InputMaybe<Array<EthereumAddressSelector>>;
   date?: InputMaybe<DateSelector>;
   external?: InputMaybe<Scalars['Boolean']>;
@@ -12042,7 +12038,6 @@ export type EthereumcoinpathArgs = {
 export type EthereumdexTradesArgs = {
   any?: InputMaybe<Array<EthereumDexTradeFilter>>;
   baseCurrency?: InputMaybe<Array<EthereumCurrencySelector>>;
-  blockHash?: InputMaybe<HashSelector>;
   buyAmount?: InputMaybe<Array<AmountSelector>>;
   buyCurrency?: InputMaybe<Array<EthereumCurrencySelector>>;
   date?: InputMaybe<DateSelector>;
@@ -12074,7 +12069,6 @@ export type EthereumdexTradesArgs = {
 /** Ethereum Chain */
 export type EthereumsmartContractCallsArgs = {
   any?: InputMaybe<Array<EthereumSmartContractCallFilter>>;
-  callDepth?: InputMaybe<StringSelector>;
   caller?: InputMaybe<Array<EthereumAddressSelector>>;
   date?: InputMaybe<DateSelector>;
   external?: InputMaybe<Scalars['Boolean']>;
@@ -13265,7 +13259,6 @@ export type EthereumAddressSelectorIn = {
 export type EthereumArgumentFilter = {
   argument?: InputMaybe<Array<ArgumentSelector>>;
   argumentType?: InputMaybe<Array<ArgumentTypeSelector>>;
-  callDepth?: InputMaybe<StringSelector>;
   caller?: InputMaybe<Array<EthereumAddressSelector>>;
   date?: InputMaybe<DateSelector>;
   external?: InputMaybe<Scalars['Boolean']>;
@@ -13326,7 +13319,6 @@ export type EthereumArgumentsanyArgs = {
   argument?: InputMaybe<Array<ArgumentSelector>>;
   argumentType?: InputMaybe<Array<ArgumentTypeSelector>>;
   as?: InputMaybe<EthereumArgumentsConvertable>;
-  callDepth?: InputMaybe<StringSelector>;
   caller?: InputMaybe<Array<EthereumAddressSelector>>;
   date?: InputMaybe<DateSelector>;
   external?: InputMaybe<Scalars['Boolean']>;
@@ -13368,7 +13360,6 @@ export type EthereumArgumentscallerArgs = {
 export type EthereumArgumentscountArgs = {
   argument?: InputMaybe<Array<ArgumentSelector>>;
   argumentType?: InputMaybe<Array<ArgumentTypeSelector>>;
-  callDepth?: InputMaybe<StringSelector>;
   caller?: InputMaybe<Array<EthereumAddressSelector>>;
   date?: InputMaybe<DateSelector>;
   external?: InputMaybe<Scalars['Boolean']>;
@@ -13390,7 +13381,6 @@ export type EthereumArgumentscountArgs = {
 export type EthereumArgumentscountBigIntArgs = {
   argument?: InputMaybe<Array<ArgumentSelector>>;
   argumentType?: InputMaybe<Array<ArgumentTypeSelector>>;
-  callDepth?: InputMaybe<StringSelector>;
   caller?: InputMaybe<Array<EthereumAddressSelector>>;
   date?: InputMaybe<DateSelector>;
   external?: InputMaybe<Scalars['Boolean']>;
@@ -13419,7 +13409,6 @@ export type EthereumArgumentsmaximumArgs = {
   argument?: InputMaybe<Array<ArgumentSelector>>;
   argumentType?: InputMaybe<Array<ArgumentTypeSelector>>;
   as?: InputMaybe<EthereumArgumentsConvertable>;
-  callDepth?: InputMaybe<StringSelector>;
   caller?: InputMaybe<Array<EthereumAddressSelector>>;
   date?: InputMaybe<DateSelector>;
   external?: InputMaybe<Scalars['Boolean']>;
@@ -13443,7 +13432,6 @@ export type EthereumArgumentsminimumArgs = {
   argument?: InputMaybe<Array<ArgumentSelector>>;
   argumentType?: InputMaybe<Array<ArgumentTypeSelector>>;
   as?: InputMaybe<EthereumArgumentsConvertable>;
-  callDepth?: InputMaybe<StringSelector>;
   caller?: InputMaybe<Array<EthereumAddressSelector>>;
   date?: InputMaybe<DateSelector>;
   external?: InputMaybe<Scalars['Boolean']>;
@@ -13467,7 +13455,6 @@ export type EthereumArgumentsnumberArgs = {
   argument?: InputMaybe<Array<ArgumentSelector>>;
   argumentType?: InputMaybe<Array<ArgumentTypeSelector>>;
   calculate?: InputMaybe<AmountAggregateFunction>;
-  callDepth?: InputMaybe<StringSelector>;
   caller?: InputMaybe<Array<EthereumAddressSelector>>;
   date?: InputMaybe<DateSelector>;
   external?: InputMaybe<Scalars['Boolean']>;
@@ -13964,7 +13951,6 @@ export type EthereumDex = {
 
 export type EthereumDexTradeFilter = {
   baseCurrency?: InputMaybe<Array<EthereumCurrencySelector>>;
-  blockHash?: InputMaybe<HashSelector>;
   buyAmount?: InputMaybe<Array<AmountSelector>>;
   buyCurrency?: InputMaybe<Array<EthereumCurrencySelector>>;
   date?: InputMaybe<DateSelector>;
@@ -14093,7 +14079,6 @@ export type EthereumDexTradesbuyCurrencyArgs = {
 /** Trades on DEX smart contracts */
 export type EthereumDexTradescountArgs = {
   baseCurrency?: InputMaybe<Array<EthereumCurrencySelector>>;
-  blockHash?: InputMaybe<HashSelector>;
   buyAmount?: InputMaybe<Array<AmountSelector>>;
   buyCurrency?: InputMaybe<Array<EthereumCurrencySelector>>;
   date?: InputMaybe<DateSelector>;
@@ -14125,7 +14110,6 @@ export type EthereumDexTradescountArgs = {
 /** Trades on DEX smart contracts */
 export type EthereumDexTradescountBigIntArgs = {
   baseCurrency?: InputMaybe<Array<EthereumCurrencySelector>>;
-  blockHash?: InputMaybe<HashSelector>;
   buyAmount?: InputMaybe<Array<AmountSelector>>;
   buyCurrency?: InputMaybe<Array<EthereumCurrencySelector>>;
   date?: InputMaybe<DateSelector>;
@@ -14164,7 +14148,6 @@ export type EthereumDexTradesexchangeArgs = {
 /** Trades on DEX smart contracts */
 export type EthereumDexTradesgasArgs = {
   baseCurrency?: InputMaybe<Array<EthereumCurrencySelector>>;
-  blockHash?: InputMaybe<HashSelector>;
   buyAmount?: InputMaybe<Array<AmountSelector>>;
   buyCurrency?: InputMaybe<Array<EthereumCurrencySelector>>;
   calculate?: InputMaybe<AmountAggregateFunction>;
@@ -14196,7 +14179,6 @@ export type EthereumDexTradesgasArgs = {
 /** Trades on DEX smart contracts */
 export type EthereumDexTradesgasPriceArgs = {
   baseCurrency?: InputMaybe<Array<EthereumCurrencySelector>>;
-  blockHash?: InputMaybe<HashSelector>;
   buyAmount?: InputMaybe<Array<AmountSelector>>;
   buyCurrency?: InputMaybe<Array<EthereumCurrencySelector>>;
   calculate?: InputMaybe<AmountAggregateFunction>;
@@ -14255,7 +14237,6 @@ export type EthereumDexTradesminimumArgs = {
 /** Trades on DEX smart contracts */
 export type EthereumDexTradespriceArgs = {
   baseCurrency?: InputMaybe<Array<EthereumCurrencySelector>>;
-  blockHash?: InputMaybe<HashSelector>;
   buyAmount?: InputMaybe<Array<AmountSelector>>;
   buyCurrency?: InputMaybe<Array<EthereumCurrencySelector>>;
   calculate?: InputMaybe<PriceAggregateFunction>;
@@ -14306,7 +14287,6 @@ export type EthereumDexTradesquoteCurrencyArgs = {
 /** Trades on DEX smart contracts */
 export type EthereumDexTradesquotePriceArgs = {
   baseCurrency?: InputMaybe<Array<EthereumCurrencySelector>>;
-  blockHash?: InputMaybe<HashSelector>;
   buyAmount?: InputMaybe<Array<AmountSelector>>;
   buyCurrency?: InputMaybe<Array<EthereumCurrencySelector>>;
   calculate?: InputMaybe<PriceAggregateFunction>;
@@ -14501,7 +14481,6 @@ export type EthereumSmartContract = {
 };
 
 export type EthereumSmartContractCallFilter = {
-  callDepth?: InputMaybe<StringSelector>;
   caller?: InputMaybe<Array<EthereumAddressSelector>>;
   date?: InputMaybe<DateSelector>;
   external?: InputMaybe<Scalars['Boolean']>;
@@ -14554,7 +14533,6 @@ export type EthereumSmartContractCalls = {
 /** Smart Contract Calls */
 export type EthereumSmartContractCallsamountArgs = {
   calculate?: InputMaybe<AmountAggregateFunction>;
-  callDepth?: InputMaybe<StringSelector>;
   caller?: InputMaybe<Array<EthereumAddressSelector>>;
   date?: InputMaybe<DateSelector>;
   external?: InputMaybe<Scalars['Boolean']>;
@@ -14591,7 +14569,6 @@ export type EthereumSmartContractCallscallerArgs = {
 
 /** Smart Contract Calls */
 export type EthereumSmartContractCallscountArgs = {
-  callDepth?: InputMaybe<StringSelector>;
   caller?: InputMaybe<Array<EthereumAddressSelector>>;
   date?: InputMaybe<DateSelector>;
   external?: InputMaybe<Scalars['Boolean']>;
@@ -14609,7 +14586,6 @@ export type EthereumSmartContractCallscountArgs = {
 
 /** Smart Contract Calls */
 export type EthereumSmartContractCallscountBigIntArgs = {
-  callDepth?: InputMaybe<StringSelector>;
   caller?: InputMaybe<Array<EthereumAddressSelector>>;
   date?: InputMaybe<DateSelector>;
   external?: InputMaybe<Scalars['Boolean']>;
@@ -14634,7 +14610,6 @@ export type EthereumSmartContractCallsexternalArgs = {
 /** Smart Contract Calls */
 export type EthereumSmartContractCallsgasValueArgs = {
   calculate?: InputMaybe<AmountAggregateFunction>;
-  callDepth?: InputMaybe<StringSelector>;
   caller?: InputMaybe<Array<EthereumAddressSelector>>;
   date?: InputMaybe<DateSelector>;
   external?: InputMaybe<Scalars['Boolean']>;
@@ -27793,6 +27768,14 @@ export type GetFactsQueryVariables = Exact<{
 
 export type GetFactsQuery = { __typename?: 'Query', offchain?: { __typename?: 'Offchain', covid?: { __typename?: 'CovidHistory', facts?: Array<{ __typename?: 'CovidFact', confirmed?: number | null | undefined, recovered?: number | null | undefined, deaths?: number | null | undefined }> | null | undefined } | null | undefined } | null | undefined };
 
+export type GetFactsPerDatesQueryVariables = Exact<{
+  from?: InputMaybe<Scalars['ISO8601DateTime']>;
+  till?: InputMaybe<Scalars['ISO8601DateTime']>;
+}>;
+
+
+export type GetFactsPerDatesQuery = { __typename?: 'Query', offchain?: { __typename?: 'Offchain', covid?: { __typename?: 'CovidHistory', facts?: Array<{ __typename?: 'CovidFact', confirmed?: number | null | undefined, recovered?: number | null | undefined, deaths?: number | null | undefined, date?: { __typename?: 'Date', date: string } | null | undefined }> | null | undefined } | null | undefined } | null | undefined };
+
 
 export const getOffChanDocument = gql`
     query getOffChan {
@@ -27876,3 +27859,48 @@ export function useGetFactsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<G
 export type GetFactsQueryHookResult = ReturnType<typeof useGetFactsQuery>;
 export type GetFactsLazyQueryHookResult = ReturnType<typeof useGetFactsLazyQuery>;
 export type GetFactsQueryResult = Apollo.QueryResult<GetFactsQuery, GetFactsQueryVariables>;
+export const GetFactsPerDatesDocument = gql`
+    query GetFactsPerDates($from: ISO8601DateTime, $till: ISO8601DateTime) {
+  offchain {
+    covid {
+      facts(date: {since: $from, till: $till}, options: {asc: "date.date"}) {
+        date {
+          date
+        }
+        confirmed
+        recovered
+        deaths
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetFactsPerDatesQuery__
+ *
+ * To run a query within a React component, call `useGetFactsPerDatesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetFactsPerDatesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetFactsPerDatesQuery({
+ *   variables: {
+ *      from: // value for 'from'
+ *      till: // value for 'till'
+ *   },
+ * });
+ */
+export function useGetFactsPerDatesQuery(baseOptions?: Apollo.QueryHookOptions<GetFactsPerDatesQuery, GetFactsPerDatesQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetFactsPerDatesQuery, GetFactsPerDatesQueryVariables>(GetFactsPerDatesDocument, options);
+      }
+export function useGetFactsPerDatesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetFactsPerDatesQuery, GetFactsPerDatesQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetFactsPerDatesQuery, GetFactsPerDatesQueryVariables>(GetFactsPerDatesDocument, options);
+        }
+export type GetFactsPerDatesQueryHookResult = ReturnType<typeof useGetFactsPerDatesQuery>;
+export type GetFactsPerDatesLazyQueryHookResult = ReturnType<typeof useGetFactsPerDatesLazyQuery>;
+export type GetFactsPerDatesQueryResult = Apollo.QueryResult<GetFactsPerDatesQuery, GetFactsPerDatesQueryVariables>;

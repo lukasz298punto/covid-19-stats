@@ -5,6 +5,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { useGlobalState } from 'constants/globalState';
+import { getRangeOptions } from 'utils/dates';
 
 const { Content, Sider, Header } = Layout;
 const { Title, Text } = Typography;
@@ -17,6 +18,8 @@ function Base({ children }: Props) {
     const location = useLocation();
     const { t } = useTranslation();
     const [range, setRange] = useGlobalState('dateRangeType');
+
+    console.log(getRangeOptions(), 'getRangeOptions');
 
     return (
         <Layout className="h-screen">
@@ -41,14 +44,10 @@ function Base({ children }: Props) {
                                 value={range}
                                 onChange={(value) => setRange(value)}
                                 className="w-36"
-                                options={[
-                                    { label: 'Today', value: 1 },
-                                    { label: 'Yesterday', value: 2 },
-                                    { label: 'Last 7 days', value: 3 },
-                                    { label: 'Last 30 days', value: 4 },
-                                    { label: 'This year', value: 5 },
-                                    { label: 'All time', value: 6 },
-                                ]}
+                                options={map(getRangeOptions(), ({ value, label }) => ({
+                                    value,
+                                    label: t(label),
+                                }))}
                             />
                         </div>
                     </Row>
