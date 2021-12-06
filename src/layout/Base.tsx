@@ -27,7 +27,7 @@ function Base({ children }: Props) {
                 </Menu>
             </Sider>
             <Layout>
-                <Content className="mx-4">{children}</Content>
+                <Content className="p-4">{children}</Content>
                 <Footer className="text-center">Ant Design ©2018 Created by Ant UED</Footer>
             </Layout>
         </Layout>

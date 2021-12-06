@@ -1,4 +1,4 @@
-import { Card, CardProps } from 'antd';
+import { Card, CardProps, Typography } from 'antd';
 import styled from 'styled-components';
 
 export type Props = {
@@ -6,7 +6,7 @@ export type Props = {
     value: number;
 } & CardProps;
 
-const getRoleColor = (kind: Props['kind']) => {
+const getColor = (kind: Props['kind']) => {
     if (!kind) return null;
 
     const color = window
@@ -18,12 +18,16 @@ const getRoleColor = (kind: Props['kind']) => {
 
 function StatCard({ value = 0, className, ...props }: Props) {
     return (
-        <Card {...props} className={className}>
-            {value}
+        <Card type="inner" {...props} className={className}>
+            <Typography.Text className="block text-center text-6xl p-4">{value}</Typography.Text>
         </Card>
     );
 }
 
 export default styled(StatCard)`
-    border-color: ${({ kind }) => getRoleColor(kind)};
+    border-color: ${({ kind }) => getColor(kind)};
+
+    & span {
+        color: ${({ kind }) => getColor(kind)};
+    }
 `;
