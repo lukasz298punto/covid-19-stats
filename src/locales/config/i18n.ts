@@ -14,6 +14,7 @@ i18n.use(initReactI18next).init({
         escapeValue: false,
     },
     lng: 'enGB',
+    keySeparator: false,
     fallbackLng: 'enGB',
 });
 

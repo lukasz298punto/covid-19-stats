@@ -1,11 +1,13 @@
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Row, Typography, Select } from 'antd';
 import { routes } from 'constants/routes';
 import { map } from 'lodash';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
+import { useGlobalState } from 'constants/globalState';
 
-const { Content, Footer, Sider } = Layout;
+const { Content, Sider, Header } = Layout;
+const { Title, Text } = Typography;
 
 type Props = {
     children?: React.ReactNode;
@@ -14,6 +16,7 @@ type Props = {
 function Base({ children }: Props) {
     const location = useLocation();
     const { t } = useTranslation();
+    const [range, setRange] = useGlobalState('dateRangeType');
 
     return (
         <Layout className="h-screen">
@@ -27,8 +30,30 @@ function Base({ children }: Props) {
                 </Menu>
             </Sider>
             <Layout>
+                <Header className="site-layout-background">
+                    <Row justify="space-between" className="items-center">
+                        <Title level={3} className="text-white m-0">
+                            {t(' COVID-2019 Statistics')}
+                        </Title>
+                        <div>
+                            <Text className="text-white mr-2">{t('Date range')}</Text>
+                            <Select
+                                value={range}
+                                onChange={(value) => setRange(value)}
+                                className="w-36"
+                                options={[
+                                    { label: 'Today', value: 1 },
+                                    { label: 'Yesterday', value: 2 },
+                                    { label: 'Last 7 days', value: 3 },
+                                    { label: 'Last 30 days', value: 4 },
+                                    { label: 'This year', value: 5 },
+                                    { label: 'All time', value: 6 },
+                                ]}
+                            />
+                        </div>
+                    </Row>
+                </Header>
                 <Content className="p-4">{children}</Content>
-                <Footer className="text-center">Ant Design ©2018 Created by Ant UED</Footer>
             </Layout>
         </Layout>
     );
